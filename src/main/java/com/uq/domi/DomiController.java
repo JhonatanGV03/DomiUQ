@@ -19,7 +19,7 @@ public class DomiController {
     private Button botonAtrasPh;
 
     @FXML
-    private Button botonCombo;
+    //private Button botonCombo;
 
     @FXML
     private Button botonCrepes;
