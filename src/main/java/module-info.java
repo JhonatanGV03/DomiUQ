@@ -8,4 +8,6 @@ module com.uq.domi.domicilios {
 
     opens com.uq.domi to javafx.fxml;
     exports com.uq.domi;
+    exports com.uq.domi.logic;
+    opens com.uq.domi.logic to javafx.fxml;
 }

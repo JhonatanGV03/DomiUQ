@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Main extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/uq/domi/img/domi.png")));
@@ -20,6 +21,8 @@ public class Main extends Application {
         stage.setTitle("Domi");
         stage.setScene(scene);
         stage.show();
+
+
     }
 
     public static void main(String[] args) {
