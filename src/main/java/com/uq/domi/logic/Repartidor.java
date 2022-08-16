@@ -1,6 +1,5 @@
 package com.uq.domi.logic;
 
-import com.uq.domi.logic.Persona;
 public class Repartidor extends Persona {
     private String domiId;
     private String matricula;
@@ -40,11 +39,11 @@ public class Repartidor extends Persona {
         this.matricula ="DOMI"+random;
     }
 
-    private String getDomiId() {
+    public String getDomiId() {
         return domiId;
     }
 
-    private String getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 }

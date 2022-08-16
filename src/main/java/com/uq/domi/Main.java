@@ -18,7 +18,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 750, 450);
         stage.setResizable(false);
         stage.getIcons().add(image);
-        stage.setTitle("Domi");
+        stage.setTitle("DOMI");
         stage.setScene(scene);
         stage.show();
 
