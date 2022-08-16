@@ -63,6 +63,8 @@ public class Adapter {
         cantidad.setText(String.valueOf(productosEscogidos.size()));
         total.setText("$"+(totalFactura+6000));
     }
+
+    //Metodo para llenar datos de cliente y repartidor
     public void actualizarDatosEnvio(Text nombreR, Text domiId, Text matricula, Text contactoR,
                                      Text nombre, Text direccion, Text telefono){
         nombreR.setText(repartidor.getNombre());

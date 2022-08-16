@@ -11,14 +11,14 @@ public class Repartidor extends Persona {
     }
 
     public Repartidor() {
-        nombreAleatorio();
-        this.setTelefono("31"+String.valueOf(Math.random()).substring(2,10));
-        setDomiId();
-        setMatricula();
+        nombreAleatorio(); //Genera un nombre aleatorio cada vez que sea intanciada la clase
+        this.setTelefono("31"+String.valueOf(Math.random()).substring(2,10)); //Genera un telefono aleatorio
+        setDomiId(); //Genera un id aleatorio
+        setMatricula(); //Genera una matricula aleatoria
     }
 
 
-    private void nombreAleatorio(){
+    private void nombreAleatorio(){ //Genera un nombre aleatorio escogiendo entre 5 opciones predefinidas
         int n = (int) (Math.random()*5)+1;
 
         switch (n) {
@@ -30,11 +30,11 @@ public class Repartidor extends Persona {
             default -> this.setNombre("pedro");
         }
     }
-    private void setDomiId() {
+    private void setDomiId() { //Genera un id aleatorio con una longitud de 6-7 digitos
         int random = (int) (Math.random() * 1000000)+10000;
         this.domiId =random+"";
     }
-    private void setMatricula() {
+    private void setMatricula() { //Genera una matricula aleatoria Iniciando siempre con Domi y con 3 digitos aleatorios
         int random = (int) (Math.random() * 899)+100;
         this.matricula ="DOMI"+random;
     }

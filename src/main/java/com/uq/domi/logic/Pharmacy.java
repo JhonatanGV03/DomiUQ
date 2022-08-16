@@ -13,7 +13,7 @@ public class Pharmacy extends Producto {
     public ArrayList<Pharmacy> getProductosPH() {
         return productosPH;
     }
-    private void setProductosFF() {
+    private void setProductosFF() { //se llena el arraylist de productosPH
         this.productosPH.add(new Pharmacy("PH01", "Pedialyte", 7650 ));
         this.productosPH.add(new Pharmacy("PH02", "Termometro", 14000 ));
         this.productosPH.add(new Pharmacy("PH03", "Ensure Advance", 8200 ));

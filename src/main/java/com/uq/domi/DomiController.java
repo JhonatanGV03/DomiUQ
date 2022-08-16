@@ -16,6 +16,7 @@ public class DomiController {
     private String telefono = "";
     private Adapter adapter = new Adapter();
 
+    //Identificadores de las ventanas de la interfaz
     @FXML
     private Pane inicioPane;
     @FXML
@@ -32,7 +33,7 @@ public class DomiController {
 
     //Inicio
     @FXML
-    void onActionBotonIniciar() {
+    void onActionBotonIniciar() { //Cambia de ventana de inicio a la de datos
         inicioPane.setVisible(false);
         inicioPane.setDisable(true);
         datosPane.setDisable(false);
@@ -42,11 +43,12 @@ public class DomiController {
 
     }
     @FXML
-    void onActionSalir() {
+    void onActionSalir() { //Cierra la aplicación
         System.exit(0);
     }
 
     //Datos
+    //Identificadores de los campos de texto y boton de la interfaz en la ventana de datos
     @FXML
     private TextField txtName;
     @FXML
@@ -57,25 +59,26 @@ public class DomiController {
     private Button botonSiguiente;
 
     @FXML
-    void saveName() {//Variable nombre cliente
+    void saveName() {//Guarda el nombre del cliente en la variable nombre y enfoca el siguiente campo de texto
         txtAdress.requestFocus();
         nombre = txtName.getText();
         System.out.println("Nombre: "+nombre);
     }
     @FXML
-    void saveAddress() {
-        direccion = txtAdress.getText();  //Variable dirección cliente
+    void saveAddress() { //Guarda la dirección del cliente en la variable direccion y enfoca el siguiente campo de texto
+        direccion = txtAdress.getText();
         txtNumber.requestFocus();
         System.out.println("Dirección: "+direccion);
     }
     @FXML
-    void saveNumber() {
+    void saveNumber() { //Guarda el número de teléfono del cliente en la variable telefono y el botonContinuar
         botonSiguiente.requestFocus();
         telefono = txtNumber.getText();
         System.out.println("Numero de Teléfono: "+telefono);
     }
     @FXML
-    void onActionBotonSiguiente() {
+    void onActionBotonSiguiente() { //Cambia de ventana de datos a la de categoría siempre y cuando los datos sean ingresados
+                                    //y actualiza los datos del cliente con ayuda del adaptador
         if (nombre.isEmpty() || direccion.isEmpty() || telefono.isEmpty()) {
             System.out.println("No se puede continuar");
         } else {
@@ -92,25 +95,28 @@ public class DomiController {
 
     //Categorias
     @FXML
-    void showFastFood() {
+    void showFastFood() { //Cambia de ventana de categoría a la de fast food
         categoriaPane.setVisible(false);
         categoriaPane.setDisable(true);
         fastFoodPane.setDisable(false);
         fastFoodPane.setVisible(true);
         stage =(Stage) fastFoodPane.getScene().getWindow();
         stage.setTitle("DOMI - Fast Food");
-    } //Terminado
+    }
     @FXML
-    void showPharmacy() {
+    void showPharmacy() { //Cambia de ventana de categoría a la de farmacia
         categoriaPane.setVisible(false);
         categoriaPane.setDisable(true);
         pharmacyPane.setDisable(false);
         pharmacyPane.setVisible(true);
         stage =(Stage) pharmacyPane.getScene().getWindow();
         stage.setTitle("DOMI - Pharmacy");
-    } //Terminado
+    }
 
     //FastFood
+
+    //Las siguienres acciones agregan un producto a la lista de productos con ayuda del
+    // adaptador enviando el codigo del producto
     @FXML
     void onActionPizza() {
         adapter.actualizarProductos("FF02");
@@ -154,7 +160,7 @@ public class DomiController {
         System.out.println(adapter.toString());
     }
     @FXML
-    void onActionBotonAtras() {
+    void onActionBotonAtras() { //Cambia la ventana actual a la de categoria
         if(fastFoodPane.isVisible()){
             fastFoodPane.setVisible(false);
             fastFoodPane.setDisable(true);
@@ -169,6 +175,8 @@ public class DomiController {
     }
 
     //pantalla Final
+
+    //Identificadores de los campos de texto y boton de la interfaz en la ventana de finalizar
     @FXML
     private Text txtCodigo;
     @FXML
@@ -195,7 +203,8 @@ public class DomiController {
     private Text txtDireccion;
 
     @FXML
-    void onActionFinalizar() {
+    void onActionFinalizar() { //Cambia la ventana actual (Pharmacy, FastFood o Categoría) a la de
+        // finalizar y actualiza todos los campos de texto (lista de productos y datos del cliente y repartidor)
         if (categoriaPane.isVisible()){
             categoriaPane.setVisible(false);
             categoriaPane.setDisable(true);

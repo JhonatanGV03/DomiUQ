@@ -15,7 +15,7 @@ public class FastFood extends Producto {
         return productosFF;
     }
 
-    private void setProductosFF() {
+    private void setProductosFF() { //se llena el arraylist de productosFF
         this.productosFF.add(new FastFood("FF01", "Tacos", 20000 ));
         this.productosFF.add(new FastFood("FF02", "Pizza", 45000 ));
         this.productosFF.add(new FastFood("FF03", "Combo", 25500 ));
